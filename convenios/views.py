@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,DetailView,ListView
+from django.views.generic import TemplateView,DetailView,ListView,CreateView
 
 # Create your views here.
 from convenios.models import Convenio
+from convenios.forms import CrearconvenioForms
 
 
 class Inicio(TemplateView):
@@ -24,3 +25,8 @@ class InicioConvenio(ListView):
     context = super(InicioConvenio, self).get_context_data(**kwargs)  
     context['page_title'] = self.page_title
     return context
+  
+class CrearConvenio(CreateView):
+  model = Convenio
+  form_class = CrearconvenioForms
+  success_url = 
