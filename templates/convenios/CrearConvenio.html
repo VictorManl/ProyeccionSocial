@@ -1,0 +1,76 @@
+{% extends 'Base/Base.html' %}
+{% block body %}
+    <div class="w-full">
+        <div class="mt-5 bg-white rounded-xl">
+            <div class="p-5 text-center text-3xl font-semibold mb-5">
+                Crear Convenio
+            </div>
+            {% if messages %}
+               {% for m in messages %}
+                   {% if m.tags == 'error' %}
+                            <p class="text-3xl">{{ m }}</p>
+                   {% endif %}
+                   {% if m.tags == 'success' %}
+                            <p class="text-3xl">{{ m }}</p>
+                   {% endif %}
+               {% endfor %}
+               
+            {% endif %} 
+            <form action="" method="post" >
+                {% csrf_token %}
+                <div class="flex justify-center">
+                    <div class="grid grid-cols-3 gap-2">
+                        <div class="">
+                            <label for="conv_numero">{{ form.conv_numero.label }}</label>
+                            <input class="appearance-none border border-gray-400 rounded-lg py-2 px-3 shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+                                   id="conv_numero" type="text"
+                                   name="conv_numero" value="{{ conv_numero }}"
+                                   placeholder="Numero del convenio">
+                        </div>
+                        <div class="col-span-2">
+                            <label for="conv_organizacion">{{ form.conv_organizacion.label }}</label>
+                            <input class="appearance-none border border-gray-400 rounded-lg py-2 px-3 shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 w-3/4"
+                                   id="conv_organizacion" type="text"
+                                   name="conv_organizacion" value="{{ conv_organizacion }}"
+                                   placeholder="Organizacion u empresa">
+                        </div>
+                        <div class="">
+                            <label for="conv_supervisor">{{ form.conv_supervisor.label }}</label>
+                            <input class="appearance-none border border-gray-400 rounded-lg py-2 px-3 shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 w-3/4"
+                                   id="conv_supervisor" type="text"
+                                   name="conv_supervisor" value="{{ conv_supervisor }}"
+                                   placeholder="Nombre completo del supervisor">
+                        </div>
+                        <div class="">
+                            <label for="conv_email">{{ form.conv_email.label }}</label>
+                            <input class="appearance-none border border-gray-400 rounded-lg py-2 px-3 shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 w-3/4"
+                                   id="conv_email" type="text"
+                                   name="conv_email" value="{{ conv_email }}"
+                                   placeholder="ejemplo@gmail.com">
+                        </div>
+                         <div class="">
+                            <label for="conv_telefono">{{ form.conv_telefono.label }}</label>
+                            <input class="appearance-none border border-gray-400 rounded-lg py-2 px-3 shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 w-3/4"
+                                   id="conv_telefono" type="text"
+                                   name="conv_telefono" value="{{ conv_telefono }}"
+                                   placeholder="Numero telefonico">
+                        </div>
+                        <div class="col-span-3">
+                            <label for="conv_objeto">{{ form.conv_objeto.label }}</label>
+                            <input class="border border-gray-400 rounded-lg py-2 px-3 shadow-sm focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 w-3/4"
+                                   id="conv_objeto" type="text"
+                                   name="conv_objeto" value="{{ conv_objeto }}"
+                                   placeholder="Objeto del convenio">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="">
+                    <button>Crear</button>
+                    <button type="submit" role="button" >Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

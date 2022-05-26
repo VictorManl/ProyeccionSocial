@@ -11,7 +11,6 @@ class Entidad(models.Model):
     enti_nombre = models.CharField('Nombre', max_length=100, null=False, blank=False)
     
     class Meta:
-        managed = True
         verbose_name = 'Entidad'
         verbose_name_plural = 'Entidades'
         
@@ -25,7 +24,6 @@ class Nivel(models.Model):
     nive_nombre = models.CharField('Nombre', max_length=200)
     
     class Meta:
-        managed = True
         verbose_name = 'Nivel'
         verbose_name_plural = 'Nivel'
         
@@ -37,7 +35,7 @@ class Nivel(models.Model):
 class Convenio(models.Model):
     conv_id = models.AutoField('Id', primary_key=True)
     conv_numero = models.CharField('Numero del convenio', max_length=50, null = False, blank=False)
-    conv_fecha = models.DateField(),
+    conv_fecha = models.DateField('Fecha',auto_now=False, auto_now_add=False),
     conv_organizacion = models.CharField('Organizacion', max_length=200, null=False, blank=False)
     conv_objeto = models.TextField('objeto', max_length=800, null=False, blank=False)
     conv_supervisor = models.CharField('Supervisor', max_length=200, null=False, blank=False)
@@ -45,10 +43,9 @@ class Convenio(models.Model):
     conv_telefono = models.IntegerField('Telefono', null=False, blank=False, default=0)
     
     class Meta:
-        managed = True
         verbose_name = 'Convenio'
         verbose_name_plural = 'Convenios'
 
     def __str__(self):
-        texto = '{0} - {1} - {2}'
-        return texto.format(self.conv_numero, self.conv_fecha, self.conv_organizacion)
+        texto = '{0} - {1}'
+        return texto.format(self.conv_numero, self.conv_organizacion)
