@@ -19,3 +19,13 @@ A
 postcss.config.js,3\f\3f70684581fd16ab3be77ca959e0138ef3ee8bfb
 B
 convenios/views.py,b\0\b0b8beee7976b0a37e148c3a61f1acbc361e1815
+<
+tailwind.css,4\8\48795daee64293ebcd3eadf1a85775b5528b0a3f
+H
+ProyeccionSocial/urls.py,8\2\82aea16405c422cf493ad1873f09c003215168e6
+A
+convenios/urls.py,9\0\90652bc9a0541ce16c3cf0b489ae16d6112486db
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+C
+static/css/main.css,1\d\1d911fa3e8e9e880e642b3cfb08a49276784f29a
