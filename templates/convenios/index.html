@@ -1,0 +1,83 @@
+{% extends "Base/Base.html" %}
+{% block body %}
+<div class="container">
+    <div class="flex items-center justify-center">
+        <div class="flex mt-5 p-3 w-2/4  items-center justify-center bg-white rounded-xl shadow-lg ">
+            <span class="flex justify-center items-center  font-extrabold uppercase">
+                <i class="fi fi-rr-menu-burger text-2xl"></i>&nbsp; &nbsp;
+                <h1 class="text-3xl">Listado de convenios</h1>
+            </span>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 place-items-end w-full mt-3">
+        <button
+            class="bg-green-400 text-white p-3 rounded-full  mr-10 text-center text-xl hover:shadow-lg hover:shadow-green-400 duration-300">Crear
+            +
+        </button>
+    </div>
+</div>
+
+{% if object_list %}
+<div class="w-full">
+    <div class="mt-5">
+        <div class="border-b border-gray-200 shadow">
+            <table class="w-full">
+                <thead class="bg-gray-200">
+                    <tr>
+                        <th class="title_table">
+                            # Convenio
+                        </th>
+                        <th class="title_table">
+                            Supervisor
+                        </th>
+                        <th class="title_table">
+                            Empresa
+                        </th>
+                        <th class="title_table">
+                            Email / Telefono
+                        </th>
+                        <th class="title_table">
+                            ver
+                        </th>
+                        <th class="title_table">
+                            Editar
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-300 rounded-xl">
+                    {% for c in object_list %}
+                    <tr class="whitespace-nowrap hover:bg-gray-50 ">
+                        <td class="content_table">{{ c.conv_numero }}</td>
+                        <td class="content_table">{{ c.conv_supervisor }}</td>
+                        <td class="content_table">{{ c.conv_organizacion}}</td>
+                        <td class="content_table">{{ c.conv_email }} - {{ c.conv_telefono }}</td>
+                        <td class="content_table">
+                            <a href=""
+                                class="bg-green-400 text-white p-2 rounded-lg block text-center  text-lg font-semibold">
+                                Ver
+                            </a>
+                        </td>
+                        <td class="content_table">
+                            <a href="" class="bg-cyan-400 p-2 rounded-lg block text-center text-white text-xl">
+                                <i class="fi fi-rr-edit"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% else %}
+
+<div class="w-full bg-white rounded-xl mt-5 shadow-lg text-center text-3xl font-bold p-5">
+    <h1>
+        <a class="underline underline-offset-1 decoration-red-500">NO hay convenios creados</a>
+    </h1>
+</div>
+
+
+{% endif %}
+{% endblock body %}

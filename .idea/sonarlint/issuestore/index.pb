@@ -23,3 +23,15 @@ H
 ProyeccionSocial/urls.py,8\2\82aea16405c422cf493ad1873f09c003215168e6
 A
 convenios/urls.py,9\0\90652bc9a0541ce16c3cf0b489ae16d6112486db
+B
+convenios/views.py,b\0\b0b8beee7976b0a37e148c3a61f1acbc361e1815
+L
+ProyeccionSocial/settings.py,4\e\4e24fc079a9f36c11c8c42d0a521e46ddfc0ab89
+B
+tailwind.config.js,0\9\0918cbb76f2c44f223706cec9d31a32cd1177ce4
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+C
+static/css/main.css,1\d\1d911fa3e8e9e880e642b3cfb08a49276784f29a
+H
+templates/Base/Base.html,0\7\076ec72ee6a2416d2ff40e56ca8f859aefe14def

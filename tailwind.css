@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.link{
+    @apply hover:text-red-500 hover:px-4 duration-300;
+};
+
+.title_table{
+    @apply p-4 text-lg;
+}
+.content_table{
+    @apply px-6 py-4 text-lg ;
+}
