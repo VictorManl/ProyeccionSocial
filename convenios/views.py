@@ -4,7 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, CreateView
 
 # Create your views here.
-from convenios.models import Convenio
+from convenios.models import Convenio, Unidadejecutora, Nivel
 from convenios.forms import CrearconvenioForm
 
 
@@ -39,6 +39,7 @@ class CrearConvenio(CreateView):
     def get_context_data(self, **kwargs):
         context = super(CrearConvenio, self).get_context_data(**kwargs)
         context['page_title'] = self.page_title
+        context['form'] = self.form_class
         return context
 
     def post(self, request, *args, **kwargs):
@@ -46,8 +47,7 @@ class CrearConvenio(CreateView):
         if form.is_valid():
             form.save()
             messages.success(request, 'Guardado correctamente')
-            return  HttpResponseRedirect(reverse_lazy('Crearconvenio'))
-
+            return  HttpResponseRedirect(reverse_lazy('InicioConvenios'))
         else:
-            messages.error(request, form.errors)
-            return HttpResponseRedirect(reverse_lazy('Crearconvenio'))
+            messages.error(request, 'Oop ah ocurrido un error, por favor intentalo nuevamente')
+            return HttpResponseRedirect(reverse_lazy('InicioConvenios'))

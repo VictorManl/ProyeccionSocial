@@ -12,12 +12,14 @@ class CrearconvenioForm(forms.ModelForm):
             'conv_objeto',
             'conv_telefono',
             'conv_supervisor',
+            'conv_ejecutora',
         ]
         labels = {
-            'conv_numero':'Numero del convenio',
-            'conv_organizacion':'Organizacion u empresa',
-            'conv_email':'Email',
-            'conv_objeto':'Objeto',
-            'conv_telefono':'Telefono',
-            'conv_supervisor':'Supervisor',
+            'conv_numero':'Numero del convenio *',
+            'conv_organizacion':'Organización o empresa *',
+            'conv_email':'Correo electronico *',
+            'conv_objeto':'Objeto del convenio *',
+            'conv_telefono':'Telefono o celular *',
+            'conv_supervisor':'Nombre completo del supervisor *',
+            'conv_ejecutora':'Unidad ejecutora *',
         }

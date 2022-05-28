@@ -1,83 +1,137 @@
 {% extends "Base/Base.html" %}
 {% block body %}
-<div class="container">
-    <div class="flex items-center justify-center">
-        <div class="flex mt-5 p-3 w-2/4  items-center justify-center bg-white rounded-xl shadow-lg ">
+    <div class="container">
+        <div class="flex items-center justify-center">
+            <div class="flex mt-5 p-3 w-2/4  items-center justify-center bg-white rounded-xl shadow-lg ">
             <span class="flex justify-center items-center  font-extrabold uppercase">
                 <i class="fi fi-rr-menu-burger text-2xl"></i>&nbsp; &nbsp;
                 <h1 class="text-3xl">Listado de convenios</h1>
             </span>
+            </div>
+        </div>
+        <div class="grid justify-items-end">
+            <div class="grid justify-items-end">
+                <a href="{% url 'Crearconvenio' %}"
+                   class="bg-green-400 text-white p-2 rounded-full  mr-10 text-center text-xl hover:shadow-lg hover:shadow-green-400 duration-300">Crear
+                    +
+                </a>
+            </div>
         </div>
     </div>
-    <div class="grid grid-cols-1 place-items-end w-full mt-3">
-        <a href="{% url 'Crearconvenio' %}"
-            class="bg-green-400 text-white p-3 rounded-full  mr-10 text-center text-xl hover:shadow-lg hover:shadow-green-400 duration-300">Crear
-            +
-        </a>
-    </div>
-</div>
 
-{% if object_list %}
-<div class="w-full">
-    <div class="mt-5">
-        <div class="border-b border-gray-200 shadow">
-            <table class="w-full">
-                <thead class="bg-gray-200">
-                    <tr>
-                        <th class="title_table">
-                            # Convenio
-                        </th>
-                        <th class="title_table">
-                            Supervisor
-                        </th>
-                        <th class="title_table">
-                            Empresa
-                        </th>
-                        <th class="title_table">
-                            Email / Telefono
-                        </th>
-                        <th class="title_table">
-                            ver
-                        </th>
-                        <th class="title_table">
-                            Editar
-                        </th>
-                    </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-300 rounded-xl">
-                    {% for c in object_list %}
-                    <tr class="whitespace-nowrap hover:bg-gray-50 ">
-                        <td class="content_table">{{ c.conv_numero }}</td>
-                        <td class="content_table">{{ c.conv_supervisor }}</td>
-                        <td class="content_table">{{ c.conv_organizacion}}</td>
-                        <td class="content_table">{{ c.conv_email }} - {{ c.conv_telefono }}</td>
-                        <td class="content_table">
-                            <a href=""
-                                class="bg-green-400 text-white p-2 rounded-lg block text-center  text-lg font-semibold">
-                                Ver
-                            </a>
-                        </td>
-                        <td class="content_table">
-                            <a href="" class="bg-cyan-400 p-2 rounded-lg block text-center text-white text-xl">
-                                <i class="fi fi-rr-edit"></i>
-                            </a>
-                        </td>
 
-                    </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
+    {% if messages %}
+        {% for m in messages %}
+            {% if m.tags == 'errors' %}
+                <div class="alert flex flex-row items-center bg-red-200 p-5 border-b-2 rounded border-red-300 my-5 mb-4">
+                    <div class="alert-icon flex items-center bg-red-100 border-2 border-red-500 justify-center h-10 w-10 flex-shrink-0 rounded-full">
+            <span class="text-red-500">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="h-6 w-6">
+                    <path fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                </svg>
+            </span>
+                    </div>
+                    <div class="alert-content ml-4">
+                        <div class="alert-title font-semibold text-lg text-red-800">
+                            <p>Oops, a ocurrido un error</p>
+                        </div>
+                        <div class="alert-description text-sm text-red-600">
+                            {{ m }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+            {% if m.tags == 'success' %}
+                <div class="alert flex flex-row items-center bg-green-200 p-5 border-b-2 rounded border-green-300 my-5 mb-4">
+                    <div class="alert-icon flex items-center bg-green-100 border-2 border-green-500 justify-center h-10 w-10 flex-shrink-0 rounded-full">
+            <span class="text-red-500">
+                <svg fill="currentColor" viewBox="0 0 20 20" class="h-6 w-6">
+                    <path fill-rule="evenodd"
+                          d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                          clip-rule="evenodd"></path>
+                </svg>
+            </span>
+                    </div>
+                    <div class="alert-content ml-4">
+                        <div class="alert-title font-semibold text-lg text-green-800">
+                            <p>Guardado correctamente</p>
+                        </div>
+                        <div class="alert-description text-sm text-green-600">
+                            {{ m }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+
+
+
+
+    {% if object_list %}
+        <div class="w-full">
+            <div class="mt-5">
+                <div class="border-b border-gray-200 shadow">
+                    <table class="w-full">
+                        <thead class="bg-gray-200">
+                        <tr>
+                            <th class="title_table">
+                                # Convenio
+                            </th>
+                            <th class="title_table">
+                                Supervisor
+                            </th>
+                            <th class="title_table">
+                                Empresa
+                            </th>
+                            <th class="title_table">
+                                Email / Telefono
+                            </th>
+                            <th class="title_table">
+                                ver
+                            </th>
+                            <th class="title_table">
+                                Editar
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-300 rounded-xl">
+                        {% for c in object_list %}
+                            <tr class="whitespace-nowrap hover:bg-gray-50 ">
+                                <td class="content_table">{{ c.conv_numero }}</td>
+                                <td class="content_table">{{ c.conv_supervisor }}</td>
+                                <td class="content_table">{{ c.conv_organizacion }}</td>
+                                <td class="content_table">{{ c.conv_email }} - {{ c.conv_telefono }}</td>
+                                <td class="content_table">
+                                    <a href=""
+                                       class="bg-green-400 text-white p-2 rounded-lg block text-center  text-lg font-semibold">
+                                        Ver
+                                    </a>
+                                </td>
+                                <td class="content_table">
+                                    <a href="" class="bg-cyan-400 p-2 rounded-lg block text-center text-white text-xl">
+                                        <i class="fi fi-rr-edit"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-{% else %}
+    {% else %}
 
-<div class="w-full bg-white rounded-xl mt-5 shadow-lg text-center text-3xl font-bold p-5">
-    <h1>
-        <a class="underline underline-offset-1 decoration-red-500">NO hay convenios creados</a>
-    </h1>
-</div>
+        <div class="w-full bg-white rounded-xl mt-5 shadow-lg text-center text-3xl font-bold p-5">
+            <h1>
+                <a class="underline underline-offset-1 decoration-red-500">NO hay convenios creados</a>
+            </h1>
+        </div>
 
 
-{% endif %}
+    {% endif %}
 {% endblock body %}

@@ -1,10 +1,12 @@
-from cgitb import text
-from re import S, T
-from statistics import mode
 from django.db import models
-from django.forms import DateField
+
 
 # Create your models here.
+UNIDAD_CHOICES = (
+    ('Dependencia','Dependencia'),
+    ('Facultad','Facultad'),
+)
+
 
 class Entidad(models.Model):
     enti_id = models.AutoField('id', primary_key=True)
@@ -30,8 +32,19 @@ class Nivel(models.Model):
     def __str__(self):
         texto = '{0}'
         return texto.format(self.nive_nombre) 
-    
-    
+
+class Unidadejecutora(models.Model):
+    unej_id = models.AutoField('Id', primary_key = True)
+    unej_unidad = models.CharField('Unidad', max_length=100, null=False, blank = False)
+
+    class Meta:
+        verbose_name = 'Unidad ejecutora'
+        verbose_name_plural = 'Unidad ejecutora'
+
+    def __str__(self):
+        texto = '{0}'
+        return texto.format(self.unej_unidad)
+
 class Convenio(models.Model):
     conv_id = models.AutoField('Id', primary_key=True)
     conv_numero = models.CharField('Numero del convenio', max_length=50, null = False, blank=False)
@@ -41,6 +54,7 @@ class Convenio(models.Model):
     conv_supervisor = models.CharField('Supervisor', max_length=200, null=False, blank=False)
     conv_email = models.EmailField('Email', max_length=254, null= False, blank=False)
     conv_telefono = models.IntegerField('Telefono', null=False, blank=False, default=0)
+    conv_ejecutora = models.CharField('Unidad ejecutora', choices=UNIDAD_CHOICES, max_length=100, null=False, blank=False, default='-------')
     
     class Meta:
         verbose_name = 'Convenio'

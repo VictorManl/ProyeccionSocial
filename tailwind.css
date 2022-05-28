@@ -5,11 +5,22 @@
 
 .link{
     @apply hover:text-red-500 hover:px-4 duration-300;
-};
-
+}
 .title_table{
     @apply p-4 text-lg;
 }
 .content_table{
     @apply px-6 py-4 text-lg ;
+}
+.btnCancelar {
+    @apply bg-red-500 rounded-lg p-3  font-medium text-white hover:shadow-lg hover:shadow-red-500 duration-300;
+}
+.btnCrear{
+    @apply bg-green-500 p-3 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-green-400 duration-300;
+}
+.input{
+    @apply bg-gray-50 w-full border-2 p-4 rounded-lg border-gray-400 focus:border-red-500 transition-colors mb-5 outline-none file:font-semibold file:text-lg placeholder:italic placeholder:text-slate-400 ;
+}
+.label{
+    @apply px-4 font-semibold italic text-gray-500;
 }

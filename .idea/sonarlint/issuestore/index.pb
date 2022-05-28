@@ -27,3 +27,23 @@ H
 templates/Base/Base.html,0\7\076ec72ee6a2416d2ff40e56ca8f859aefe14def
 L
 ProyeccionSocial/settings.py,4\e\4e24fc079a9f36c11c8c42d0a521e46ddfc0ab89
+B
+convenios/forms.py,8\4\842a3bacc1acb3fd41b0276057e161b86f82781f
+P
+ convenios/migrations/__init__.py,6\e\6eff8eeabe4484ccc1325f998e13756d93b4e4e4
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+C
+static/css/main.css,1\d\1d911fa3e8e9e880e642b3cfb08a49276784f29a
+T
+$convenios/migrations/0001_initial.py,4\2\42b61f9ccf6f20920a3266c2a032ba85fef138e6
+C
+convenios/models.py,1\6\161db49f83752c7f24891bb2a059eb73f1c7737b
+N
+templates/convenios/index.html,d\6\d64d069159435c47d523ddb21499709b9390f9d5
+B
+convenios/views.py,b\0\b0b8beee7976b0a37e148c3a61f1acbc361e1815
+A
+convenios/urls.py,9\0\90652bc9a0541ce16c3cf0b489ae16d6112486db
+V
+&templates/convenios/CrearConvenio.html,a\2\a2073eb427563f8baf05e3d9245a57c0489e3e01
