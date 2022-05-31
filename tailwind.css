@@ -19,7 +19,7 @@
     @apply bg-green-500 p-3 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-green-400 duration-300;
 }
 .input{
-    @apply bg-gray-50 w-full border-2 p-4 rounded-lg border-gray-400 focus:border-red-500 transition-colors mb-5 outline-none file:font-semibold file:text-lg placeholder:italic placeholder:text-slate-400 ;
+    @apply bg-gray-50 w-full border-2 p-4 rounded-md border-gray-400 focus:border-red-500 transition-colors mb-5 outline-none file:font-semibold file:text-lg placeholder:italic placeholder:text-slate-400 caret-red-500;
 }
 .label{
     @apply px-4 font-semibold italic text-gray-500;

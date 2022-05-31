@@ -1,10 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'Base/Base.html' %}
+{% load static %}
+{% block body %}
+    <div class="flex justify-center items-center h-screen">
+
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="grid grid-cols-3 gap-4">
+                <select name="" id="ejecutor" class="input" onclick="verificar()" >
+                    <option class="input" value="separardor"  onclick="verificar()">----------</option>
+                    {% for en in entidad %}
+                        <option value="{{ en.enti_id }}"  onclick="verificar()"> {{ en.enti_nombre }} </option>
+                    {% endfor %}
+                </select>
+                <div class="hidden" id="dependencia" >
+                    {{ form.dependencia }}
+                </div>
+                <div class="hidden">
+                    {{ form.facultad }}
+                </div>
+            </div>
+
+            {{ form.ejecutor }}
+
+            <button type="submit" class="btnCrear">Crear</button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/main.js' %}" ></script>
+{% endblock %}

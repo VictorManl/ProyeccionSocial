@@ -1,68 +1,114 @@
 {% extends 'Base/Base.html' %}
 {% load static %}
 {% block body %}
-    <div class="w-full">
-        <div class="mt-5 bg-white rounded-xl">
-            <div class="p-5 text-center text-4xl italic font-extrabold mb-4">
-                Crear Convenio
-            </div>
+<div class="w-full">
+    <div class="mt-5 bg-white rounded-xl">
+        <div class="p-5 text-center text-4xl italic font-extrabold mb-4">
+            <h2 class="underline decoration-dashed decoration-red-500  "> Crear Convenio</h2>
+        </div>
+        <!-- Formulario -->
+        <div class="flex justify-center items-center shadow-xl mb-11 rounded-xl">
+            <form action="" method="post" class="p-3">
+                {% csrf_token %}
+                <div class="grid grid-cols-3 gap-4 rounded-lg p-4">
 
-            <!--Mensajes -->
-            {% if messages %}
-                {% for m in messages %}
-                    {% if m.tags == 'error' %}
-                        <p class="text-3xl">{{ m }}</p>
-                    {% endif %}
-                    {% if m.tags == 'success' %}
-                        <p class="text-3xl">{{ m }}</p>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            <!-- Formulario -->
-            <div class="flex justify-center items-center">
-                <form action="" method="post" class="">
-                    {% csrf_token %}
-                    <div class="grid grid-cols-3 gap-4 border-2 border-red-300 rounded-lg p-4">
-                        <div class="">
-                            <label for="" class="label">{{ form.conv_numero.label }}</label>
-                            <input type="text" id="" name="" value=""
-                                   class="input">
-                        </div>
-                        <div class="col-span-2 w-full">
-                            <label for="" class="label">{{ form.conv_organizacion.label }} </label>
-                            <input type="text" class="input">
-
-                        </div>
-                        <div class="">
-                            <label for="" class="label">{{ form.conv_email.label }}</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div class="">
-                            <label for="" class="label">{{ form.conv_telefono.label }}</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div class="">
-                            <label for="" class="label">Dirección *</label>
-                            <input type="text" class="input">
-                        </div>
-
-                        <div class="">
-                            <label for="" class="label">{{ form.conv_supervisor.label }}</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div class="">
-                            <label for="" class="label">{{ form.conv_email.label }}</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div class="">
-                            <label for="" class="label">{{ form.conv_telefono.label }}</label>
-                            <input type="text" class="input">
-                        </div>
-                        <div>
+                    <div class="col-start-2  col-span-1">
+                        <label for="" class="label">{{ form.conv_numero.label }}</label>
+                        <input type="text" id="conv_numero" name="conv_numero" value="{{ conv_numero }}" class="input"
+                            placeholder="Numero del convenio">
                     </div>
-                </form>
-            </div>
+
+                    <div class="col-start-1">
+                        <label for="" class="label">Fecha del convenio *</label>
+                        <input type="date" id="conv_fecha" name="conv_fecha" value="{{ conv_fecha }}" class="input">
+                    </div>
+
+                    <div class="col-span-2 w-full">
+                        <label for="" class="label">{{ form.conv_organizacion.label }} </label>
+                        <input type="text" class="input" id="conv_organizacion" name="conv_organizacion"
+                            value="{{ conv_organizacion }}"
+                            placeholder="Organización o empresa con la que se realiza el convenio">
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.conv_documento.label }}</label>
+                        <input type="text" class="input" id="conv_documento" name="conv_documento"
+                            value="{{ conv_documento }}" placeholder="Documento del representante legal">
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.conv_representante.label }}</label>
+                        <input type="text" class="input" id="conv_representante" name="conv_representante"
+                            value="{{ conv_representante }}" placeholder="Nombre completo del representante legal">
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.conv_supervisor.label }}</label>
+                        <input type="text" class="input" id="conv_supervisor" name="conv_supervisor"
+                            value="{{ conv_supervisor }}" placeholder="Nombre completo del supervisor">
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.conv_direccion.label }} *</label>
+                        <input type="text" class="input" id="conv_direccion" name="conv_direccion"
+                            value="{{ conv_direccion }}" placeholder="Dirección de la empresa u organización">
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.conv_telefono.label }}</label>
+                        <input type="tel" class="input" id="conv_telefono" name="conv_telefono"
+                            value="{{ conv_telefono }}" placeholder="Telefono o celular de contacto">
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.conv_email.label }}</label>
+                        <input type="email" class="input" id="conv_email" name="conv_email" value="{{ conv_email }}"
+                            placeholder="Correo electronico">
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.conv_valor.label }}</label>
+                        <input type="number" class="input" id="conv_valor" name="conv_valor" value="{{ conv_valor }}"
+                            placeholder="Valor del convenio">
+                    </div>
+
+                    <div class=" col-span-1">
+                        <label for="" class="label"> {{ form.nive_id.label }} </label>
+                        <select name="nive_id" id="nive_id" class="input">
+                            <option value="">Seleccione nivel de alcanze</option>
+                            {% for n in nivel %}
+                            <option value=" {{ n.nive_id }}" name="nive_id" id="nive_id"> {{ n.nive_nombre }} </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-span-1">
+                        <label for="" class="label">{{ form.enti_id.label }}</label>
+                        <select name="enti_id" id="enti_id" class="input">
+                            <option value="">Seleccione una entidad</option>
+                            {% for n in entidad %}
+                            <option value="{{ n.enti_id }}" name="enti_id" id="enti_id">{{ n.enti_nombre }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="col-span-3">
+                        <label for="" class="label">{{ form.conv_objeto.label }}</label>
+                        <textarea type="text" class="input" id="conv_objeto" name="conv_objeto"
+                            value="{{ conv_objeto }}" placeholder="Objeto del convenio"></textarea>
+                    </div>
+
+
+                    <div class="col-span-3 w-full flex justify-end">
+                        <button class="btnCancelar">Cancelar</button>
+                        <button type="submit" role="button" class="btnCrear mx-10">Crear</button>
+                    </div>
+
+                </div>
+            </form>
         </div>
     </div>
-    <script src="{% static 'js/main.js' %}"></script>
+</div>
+<script src="{% static 'js/main.js' %}"></script>
 {% endblock %}

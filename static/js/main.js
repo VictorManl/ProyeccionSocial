@@ -1,9 +1,7 @@
-$("#nivel").chained("#unidad");
-
 function verificar() {
     const ejecutora = document.getElementById('ejecutor');
 
-    if (ejecutora.value === 'dependencia') {
+    if (ejecutora.value === '1') {
         document.getElementById('dependencia').classList.remove('hidden');
     }
     if (ejecutora.value === 'facultad') {

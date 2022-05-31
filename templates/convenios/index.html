@@ -82,13 +82,13 @@
                                 # Convenio
                             </th>
                             <th class="title_table">
-                                Supervisor
+                                Representante legal
                             </th>
                             <th class="title_table">
                                 Empresa
                             </th>
                             <th class="title_table">
-                                Email / Telefono
+                               Supervisor
                             </th>
                             <th class="title_table">
                                 ver
@@ -102,9 +102,9 @@
                         {% for c in object_list %}
                             <tr class="whitespace-nowrap hover:bg-gray-50 ">
                                 <td class="content_table">{{ c.conv_numero }}</td>
-                                <td class="content_table">{{ c.conv_supervisor }}</td>
+                                <td class="content_table">{{ c.conv_representante }}</td>
                                 <td class="content_table">{{ c.conv_organizacion }}</td>
-                                <td class="content_table">{{ c.conv_email }} - {{ c.conv_telefono }}</td>
+                                <td class="content_table">{{ c.conv_supervisor }}</td>
                                 <td class="content_table">
                                     <a href=""
                                        class="bg-green-400 text-white p-2 rounded-lg block text-center  text-lg font-semibold">

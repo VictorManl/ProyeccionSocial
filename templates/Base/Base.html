@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {{ page_title }} | Proyección</title>
     <link rel="icon" href="{% static 'image/Ut.fw.png' %}">
@@ -24,110 +24,116 @@
 </style>
 
 <body class="bg-gray-100">
-<div class="w-full lg:w-auto">
-    <div class="container w-full mx-auto bg-white rounded-xl mt-3">
-        <nav class="flex justify-around p-4">
-            <div class="flex justify-center items-center cursor-pointer">
-                    <span class="text-2xl font-semibold hover:font-extrabold flex hover:text-red-500 duration-200">
+    <div class="w-full lg:w-auto">
+        <div class="container w-full mx-auto bg-white rounded-xl mt-3">
+            <nav class="flex justify-around p-4">
+                <div class="flex justify-center items-center cursor-pointer">
+                    <span class=" font-semibold hover:font-extrabold flex hover:text-red-500 duration-100 uppercase">
                         <img src="{% static 'image/Ut.fw.png' %}" alt="">
-                        Proyección Social
+                        <a href="#" class="inline-flex text-xl duration-100">
+                            Proyección Social
+                        </a>
                     </span>
-            </div>
-            <div class="flex justify-center items-center">
-                <ul class="flex space-x-10 text-md font-medium uppercase">
-                    <li class="link">
-                        <a href="{% url 'Inicio' %}" class="relative group">
-                            Inicio &nbsp;
-                            <i class="fi fi-rr-home"></i>
-                            <div
+                </div>
+                <div class="flex justify-center items-center">
+                    <ul class="flex space-x-10 text-md font-medium uppercase">
+                        <li class="link">
+                            <a href="{% url 'Inicio' %}" class="relative group">
+                                Inicio &nbsp;
+                                <i class="fi fi-rr-home"></i>
+                                <div
                                     class="w-full bg-black h-[1px] scale-x-0  group-hover:scale-x-100 transition-transform">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="link">
-                        <a href="{% url 'InicioConvenios' %}" class="relative group">
-                            Convenios &nbsp;
-                            <i class="fi fi-rr-document-signed"></i>
-                            <div
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link">
+                            <a href="{% url 'InicioConvenios' %}" class="relative group">
+                                Convenios &nbsp;
+                                <i class="fi fi-rr-document-signed"></i>
+                                <div
                                     class="w-full bg-black h-[1px] scale-x-0  group-hover:scale-x-100 transition-transform">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="link">
-                        <a href="" class=" relative group"> Proyectos &nbsp;
-                            <i class="fi fi-rr-document"></i>
-                            <div
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link">
+                            <a href="" class=" relative group"> Proyectos &nbsp;
+                                <i class="fi fi-rr-document"></i>
+                                <div
                                     class="w-full bg-black h-[1px] scale-x-0  group-hover:scale-x-100 transition-transform">
-                            </div>
-                        </a>
-                    </li>
-                    <li class="link relative group">
-                        <a href="" class="relative group"> Reportes &nbsp;
-                            <img class="inline-flex bg-white w-[14px] h-[14px] group-hover:rotate-90  duration-200"
-                                 src="{% static 'icon/right-arrow.png' %}" alt="">
-                            <div
+                                </div>
+                            </a>
+                        </li>
+                        <li class="link relative group">
+                            <a href="" class="relative group"> Reportes &nbsp;
+                                <img class="inline-flex bg-white w-[14px] h-[14px] group-hover:rotate-90  duration-200"
+                                    src="{% static 'icon/right-arrow.png' %}" alt="">
+                                <div
                                     class="w-full bg-black h-[1px] scale-x-0  group-hover:scale-x-100 transition-transform">
-                            </div>
-                            <div class="hidden w-full absolute space-y-8 bg-white p-3 left-0 rounded-lg group-hover:block  group-hover:text-black  group-hover:transition-transform  ">
-                                <ul>
-                                    <li><a href="#"
-                                           class="flex mb-5 text-center hover:text-red-500 duration-200 uppercase inline-flex">Convenios
-                                        &nbsp;
-                                        <i class="fi fi-rr-document-signed"></i>
-                                    </a>
+                                </div>
+                                <div
+                                    class="hidden w-full absolute space-y-8 bg-white p-3 left-0 rounded-lg group-hover:block  group-hover:text-black  group-hover:transition-transform  ">
+                                    <ul>
+                                        <li><a href="#"
+                                                class="flex mb-5 text-center hover:text-red-500 duration-200 uppercase inline-flex">Convenios
+                                                &nbsp;
+                                                <i class="fi fi-rr-document-signed"></i>
+                                            </a>
 
-                                    </li>
-                                    <li><a href="#" class="flex mb-3 hover:text-red-500 duration-200 uppercase">Proyectos
-                                        &nbsp;
-                                        <i class="fi fi-rr-document"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="flex mb-3 hover:text-red-500 duration-200 uppercase">Proyectos
+                                                &nbsp;
+                                                <i class="fi fi-rr-document"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
 
-                    </li>
-                    <li class="link relative group">
-                        <a href="" class="relative group"> Historial &nbsp;
-                            <img class="inline-flex bg-white w-[14px] h-[14px] group-hover:rotate-90  duration-200"
-                                 src="{% static 'icon/right-arrow.png' %}" alt="">
-                            <div
+                        </li>
+                        <li class="link relative group">
+                            <a href="" class="relative group"> Historial &nbsp;
+                                <img class="inline-flex bg-white w-[14px] h-[14px] group-hover:rotate-90  duration-200"
+                                    src="{% static 'icon/right-arrow.png' %}" alt="">
+                                <div
                                     class="w-full bg-black h-[1px] scale-x-0  group-hover:scale-x-100 transition-transform">
-                            </div>
-                            <div class="hidden w-full absolute space-y-8 bg-white p-3 left-0 rounded-lg group-hover:block  group-hover:text-black  group-hover:transition-transform  ">
-                                <ul>
-                                    <li><a href="#"
-                                           class="flex mb-5 text-center hover:text-red-500 duration-200 uppercase">Convenios
-                                        &nbsp; <i class="fi fi-rr-document-signed"></i></a>
-                                    </li>
-                                    <li><a href="#" class="flex mb-3 hover:text-red-500 duration-200 uppercase">Proyectos
-                                        &nbsp; <i class="fi fi-rr-document"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </a>
+                                </div>
+                                <div
+                                    class="hidden w-full absolute space-y-8 bg-white p-3 left-0 rounded-lg group-hover:block  group-hover:text-black  group-hover:transition-transform  ">
+                                    <ul>
+                                        <li><a href="#"
+                                                class="flex mb-5 text-center hover:text-red-500 duration-200 uppercase">Convenios
+                                                &nbsp; <i class="fi fi-rr-document-signed"></i></a>
+                                        </li>
+                                        <li><a href="#"
+                                                class="flex mb-3 hover:text-red-500 duration-200 uppercase">Proyectos
+                                                &nbsp; <i class="fi fi-rr-document"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
 
-                    </li>
-                </ul>
-            </div>
-            <div class="flex justify-center items-center duration-300 ">
-                <button
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex justify-center items-center duration-300 ">
+                    <button
                         class="bg-red-500 text-white p-3 rounded-full hover:shadow-lg hover:shadow-red-500 duration-300">
-                    Iniciar sesion &nbsp;
-                    <i class="fi fi-rr-user"></i>
-                </button>
-            </div>
-        </nav>
+                        Iniciar sesion &nbsp;
+                        <i class="fi fi-rr-user"></i>
+                    </button>
+                </div>
+            </nav>
 
+        </div>
     </div>
-</div>
-<div class="container w-full mx-auto">
-    {% block body %}
+    <div class="container w-full mx-auto">
+        {% block body %}
 
-    {% endblock %}
-</div>
-<script src="https://kit.fontawesome.com/e30e9ea753.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="{% static 'js/jquery.chained.min.js' %}"></script>
+        {% endblock %}
+    </div>
+    <script src="https://kit.fontawesome.com/e30e9ea753.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.chained.min.js' %}"></script>
 </body>
 
 </html>
